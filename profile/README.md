@@ -56,7 +56,24 @@
 다국어 번역 기능을 통해 공지 내용을 다양한 언어로 확인할 수 있습니다.
 
 ### 구현 방식
+#### Specification
+- 프론트엔드 (https://github.com/KNU-Ummai/ft-frontend)
+  - HTML5 + Vanilla Javascript
+  - Websocket
+- 백엔드 (https://github.com/KNU-Ummai/ft-backend-api)
+  - FastAPI
+  - Apache2 (Reverse Proxy and HTML Distribution)
+  - MySQL (MariaDB)
+ ![image](https://github.com/user-attachments/assets/5aa90b25-21b1-4d97-a5d3-2e7a1aeabf9e)
 
+- 프론트엔드
+  - 표준 HTML5와 웹 기술을 이용하여 사용자 환경을 구성하였음.
+  - 채팅과 같은 실시간 상호작용을 위해 웹소켓을 이용하였음.
+  - 클라이언트 통신 간 보안 확보를 위해 WSS 소켓을 이용함. (일반 웹문서또한 ssl적용하여 https로 제공함.)
+- 백엔드
+  - 메인 백엔드 프로세스의 은닉을 위해 리버스 프록시를 적용하였음.
+  - MariaDB를 메인 데이터 베이스로 활용하여 채팅 기록, 게시물 정보 등을 모두 관리함.
+  - 개발의 용이성을 위해 세션쿠키 방식의 인증을 적용하였음. (XSS, CSRF 방지를 위해 일부 보안 정책을 적용함.)
 
 ## 향후 개선 혹은 발전 방안
 
@@ -67,3 +84,7 @@
 모바일 앱 개발:
 
  웹페이지 외에도 모바일 앱을 개발하여 학생들이 언제 어디서나 편리하게 서비스를 이용할 수 있도록 합니다.
+
+## 개발 레포지토리
+프론트엔드 : https://github.com/KNU-Ummai/ft-frontend
+백엔드 : https://github.com/KNU-Ummai/ft-backend-api
